@@ -6,6 +6,12 @@ const check = document.querySelector('.check');
 const again = document.querySelector('.again');
 const btnCloseModal = document.querySelector('.close-modal');
 
+// GLOBAL LISTENERS
+document.addEventListener('keydown', function (e) {
+  if (e.key === 'Escape' && !modal.classList.contains('hidden')) closeModal();
+  // Returning exactly value of object 'e' on position 'key'
+});
+
 //FUNCTIONS
 const openModal = function () {
   modal.classList.remove('hidden');
