@@ -1,3 +1,22 @@
+// VARIABLES
+const manual = document.querySelector('.manual');
+const modal = document.querySelector('.modal');
+const overlay = document.querySelector('.overlay');
+const check = document.querySelector('.check');
+const again = document.querySelector('.again');
+const btnCloseModal = document.querySelector('.close-modal');
+
+//FUNCTIONS
+const openModal = function () {
+  modal.classList.remove('hidden');
+  overlay.classList.remove('hidden');
+};
+
+const closeModal = function () {
+  modal.classList.add('hidden');
+  overlay.classList.add('hidden');
+};
+
 const displayMessage = function (typeFunction, message) {
   document.querySelector(typeFunction).textContent = message;
 };
@@ -27,12 +46,14 @@ const removeScore = function () {
   displayMessage('.score', score);
 };
 
+//MAIN
 secretNumber = randomNumber();
 
 let score = 20;
 let highscore = 0;
 
-document.querySelector('.check').addEventListener('click', function () {
+// GUESSING FUNCTIONALITY
+check.addEventListener('click', function () {
   const guess = Number(document.querySelector('.guess').value);
   if (!guess) {
     displayMessage('.message', '🛑 No number!');
@@ -58,6 +79,12 @@ document.querySelector('.check').addEventListener('click', function () {
   }
 });
 
-document.querySelector('.again').addEventListener('click', function () {
+// RESET FUNCTIONALITY
+again.addEventListener('click', function () {
   reset();
 });
+
+// Manual button function
+manual.addEventListener('click', openModal);
+overlay.addEventListener('click', closeModal);
+btnCloseModal.addEventListener('click', closeModal);

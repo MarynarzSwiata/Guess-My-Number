@@ -13,6 +13,7 @@
       <h1>Guess My Number!</h1>
       <p class="between">(Between 1 and 20)</p>
       <button class="btn again">Again!</button>
+      <button class="btn manual">Manual</button>
       <div class="number">?</div>
     </header>
     <main>
@@ -26,6 +27,29 @@
         <p class="label-highscore">
           🥇 Highscore: <span class="highscore">0</span>
         </p>
+        <div class="modal hidden">
+          <button class="close-modal">&times;</button>
+          <p
+            style="
+              color: #222;
+              font-size: 30px;
+              text-align: center;
+              margin-bottom: 10px;
+            "
+          >
+            <strong>MANUAL</strong>
+          </p>
+          <p class="normal-text">
+            The simple game for guessing the random number. <br><br>
+            <ol class="normal-text">
+              <li>You have a 20 moves to guess the correct number.</li>
+              <li>Your best score will be saved. </li>
+              <li>Button Again! will reset
+                the page except your highscore.</li>
+            </ol>
+          </p>
+        </div>
+        <div class="overlay hidden"></div>
       </section>
     </main>
     <script src="scripts/global.js"></script>
